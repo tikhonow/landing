@@ -1,4 +1,7 @@
 export const Header = (props) => {
+  const handleClick = () => {
+    window.location.replace('https://www.ccsam.online');
+  };
   return (
     <header id='header'>
       <div className='intro'>
@@ -12,8 +15,8 @@ export const Header = (props) => {
                 </h1>
                 <p>{props.data ? props.data.paragraph : 'Loading'}</p>
                 <a
-                  href='http://ccsam.online/'
-                  className='btn btn-custom btn-lg page-scroll'
+                    onClick={handleClick}
+                    className='btn btn-custom btn-lg page-scroll'
                 >
                   Войти
                 </a>{' '}
