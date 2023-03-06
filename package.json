@@ -1,6 +1,6 @@
 {
   "homepage": "http://ccsam.ru",
-  "name": "landingpage-react-template",
+  "name": "CCSAM",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
