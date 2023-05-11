@@ -1,6 +1,6 @@
 export const Header = (props) => {
   const handleClick = () => {
-    window.location.replace('https://www.ccsam.online');
+    window.location.replace('https://editor.ccsam.ru');
   };
   return (
     <header id='header'>
