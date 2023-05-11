@@ -18,7 +18,7 @@ export const Header = (props) => {
                     onClick={handleClick}
                     className='btn btn-custom btn-lg page-scroll'
                 >
-                  Войти
+                  Попробовать
                 </a>{' '}
               </div>
             </div>
