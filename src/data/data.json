@@ -37,8 +37,8 @@
     },
     {
       "title": "Расчет RT",
-      "largeImage": "img/portfolio/rt.png",
-      "smallImage": "img/portfolio/rt.png"
+      "largeImage": "img/portfolio/img_2.png",
+      "smallImage": "img/portfolio/img_2.png"
     },
     {
       "title": "Расчет звукоизоляции( скоро )",
@@ -46,14 +46,14 @@
       "smallImage": "img/portfolio/iso.png"
     },
     {
-      "title": "Получение EXEL отчета",
+      "title": "Получение EXEL отчета (в разработке)",
       "largeImage": "img/portfolio/exel.png",
       "smallImage": "img/portfolio/exel.png"
     },
     {
       "title": "Библиотека материалов",
-      "largeImage": "img/portfolio/exel.png",
-      "smallImage": "img/portfolio/exel.png"
+      "largeImage": "img/portfolio/img_1.png",
+      "smallImage": "img/portfolio/img_1.png"
     }
   ],
   "Services": [
@@ -121,6 +121,6 @@
     {
       "icon": "fa fa-rub",
       "title": "Подбор материалов",
-      "text": "В разработке"
+      "text": ""
     }]
 }

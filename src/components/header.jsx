@@ -1,6 +1,6 @@
 export const Header = (props) => {
   const handleClick = () => {
-    window.location.replace('https://editor.ccsam.ru');
+    window.location.replace('https://ccsam-frontend.vercel.app');
   };
   return (
     <header id='header'>

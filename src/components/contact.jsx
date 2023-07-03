@@ -134,9 +134,9 @@ export const Contact = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; 2022 Landing a {' '}
-            <a href='http://www.ccsam.ru' rel='nofollow'>
-              CCSAM
+            &copy; 2023 ООО {' '}
+            <a href='https://www.rusprofile.ru/id/1232500002657' rel='nofollow'>
+              "МьюзикЛАБ"
             </a>
           </p>
         </div>
