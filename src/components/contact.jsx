@@ -12,7 +12,7 @@ export const Contact = (props) => {
 
   const sendTelegramMessage = (name, email, message) => {
     const telegramUrl = 'https://api.telegram.org/bot6126876615:AAEvwRBurYXJbuvLpj585mfnIBO3nsCnqsk/sendMessage';
-    const chatId = '1001981649009';
+    const chatId = '-1001981649009';
     const telegramMessage = `Новое сообщение от пользователя:\n\nИмя: ${name}\nEmail: ${email}\nСообщение: ${message}`;
 
     axios.post(telegramUrl, { chat_id: chatId, text: telegramMessage })
