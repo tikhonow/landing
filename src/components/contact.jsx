@@ -10,6 +10,22 @@ const initialState = {
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState)
 
+  const sendTelegramMessage = (name, email, message) => {
+    const telegramUrl = 'https://api.telegram.org/bot6126876615:AAEvwRBurYXJbuvLpj585mfnIBO3nsCnqsk/sendMessage';
+    const chatId = '1001981649009';
+    const telegramMessage = `Новое сообщение от пользователя:\n\nИмя: ${name}\nEmail: ${email}\nСообщение: ${message}`;
+
+    axios.post(telegramUrl, { chat_id: chatId, text: telegramMessage })
+        .then((response) => {
+          console.log(response.status);
+          // Здесь можно добавить обработку успешной отправки сообщения
+        })
+        .catch((error) => {
+          console.error(error);
+          // Здесь можно добавить обработку ошибки отправки сообщения
+        });
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target
     setState((prevState) => ({ ...prevState, [name]: value }))
@@ -17,29 +33,12 @@ export const Contact = (props) => {
   const clearState = () => setState({ ...initialState })
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(name, email, message)
-    axios.post('http://127.0.0.1:8000/api/feedback/',{
-      "name": name,
-      "email": email,
-      "feedback": message,
-      "score":1
-    } ).then(() => setState({ ...initialState })
-    )
-    /*emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-          clearState()
-        },
-        (error) => {
-          console.log(error.text)
-        }
-      )*/
-  }
+    e.preventDefault();
+    console.log(name, email, message);
+    sendTelegramMessage(name, email, message);
+    setState({ ...initialState });
+  };
+
   return (
     <div>
       <div id='contact'>
