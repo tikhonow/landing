@@ -9,6 +9,9 @@ const initialState = {
 }
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState)
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [isFormSuccess, setIsFormSuccess] = useState(false);
+
 
   const sendTelegramMessage = (name, email, message) => {
     const telegramUrl = 'https://api.telegram.org/bot6126876615:AAEvwRBurYXJbuvLpj585mfnIBO3nsCnqsk/sendMessage';
@@ -36,8 +39,15 @@ export const Contact = (props) => {
     e.preventDefault();
     console.log(name, email, message);
     sendTelegramMessage(name, email, message);
+    setIsFormSubmitted(true);
+    setIsFormSuccess(true);
     setState({ ...initialState });
+    setTimeout(() => {
+      setIsFormSubmitted(false);
+      setIsFormSuccess(false);
+    }, 5000);
   };
+
 
   return (
     <div>
@@ -95,9 +105,16 @@ export const Contact = (props) => {
                   <p className='help-block text-danger'></p>
                 </div>
                 <div id='success'></div>
-                <button type='submit' className='btn btn-custom btn-lg'>
-                  Отправить
+                <button
+                    type='submit'
+                    className='btn btn-custom btn-lg'
+                    style={{ backgroundColor: isFormSuccess ? 'green' : '' }}
+                    disabled={isFormSubmitted}
+                >
+                  {isFormSubmitted ? 'Ваш ответ получен' : 'Отправить'}
                 </button>
+
+
               </form>
             </div>
           </div>
